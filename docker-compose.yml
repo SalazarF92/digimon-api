@@ -1,0 +1,31 @@
+version: '3'
+
+services: 
+  postgres: 
+    container_name: digimon-db
+    image: postgres
+    environment: 
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DATABASE: ${POSTGRES_DATABASE}
+    ports: 
+      - "5432:5432"
+    expose:
+      - "5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: teste@admin.com
+      PGADMIN_DEFAULT_PASSWORD: 123
+    ports:
+      - "8081:80"
+    expose:
+      - "8081"
+    depends_on:
+      - postgres
