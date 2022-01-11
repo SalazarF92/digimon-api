@@ -1,6 +1,9 @@
 {
   "name": "digimon-monsters",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.x"
+  },
   "main": "index.js",
   "license": "MIT",
   "scripts": {
