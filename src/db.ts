@@ -11,7 +11,7 @@ export const connection = createConnection({
   name: "default",
   type: "postgres",
   host: POSTGRES_HOST,
-  port: 5432,
+  // port: 5432,
   username: POSTGRES_USER,
   password: POSTGRES_PASSWORD,
   database: POSTGRES_DATABASE,
