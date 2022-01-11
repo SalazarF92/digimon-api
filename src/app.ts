@@ -9,7 +9,7 @@ app.use(bp.json());
 app.use(cors()); // Use this after the variable declaration
 app.use(router);
 app.listen(process.env.PORT, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
+  console.log(`⚡️[server]: Server is running at https://localhost:${process.env.PORT}`);
 });
 
 // import path from "path";
