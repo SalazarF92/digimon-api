@@ -4,11 +4,11 @@ var cors = require("cors");
 const express = require("express");
 const bp = require("body-parser");
 export const app = express();
-const PORT = 8000;
+// const PORT = 8000;
 app.use(bp.json());
 app.use(cors()); // Use this after the variable declaration
 app.use(router);
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
 });
 
