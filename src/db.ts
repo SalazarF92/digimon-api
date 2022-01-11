@@ -1,6 +1,11 @@
 import { createConnection } from "typeorm";
 import { Digimon } from "./entity/digimon";
-import { POSTGRES_HOST, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DATABASE } from "./settings";
+import {
+  POSTGRES_HOST,
+  POSTGRES_USER,
+  POSTGRES_PASSWORD,
+  POSTGRES_DATABASE,
+} from "./settings";
 
 export const connection = createConnection({
   name: "default",
@@ -13,6 +18,7 @@ export const connection = createConnection({
   entities: [Digimon],
   synchronize: true,
   logging: false,
+  ssl: { rejectUnauthorized: false },
 });
 
 export const getConnection = () => connection;
