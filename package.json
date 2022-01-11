@@ -1,11 +1,13 @@
 {
   "name": "digimon-monsters",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.x"
+  },
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "rimraf build && tsc",
-    "postbuild": "rimraf src",
     "start": "nodemon src/index.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
@@ -17,6 +19,7 @@
     "class-validator": "^0.13.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "node": "^17.3.0",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.9.0",
